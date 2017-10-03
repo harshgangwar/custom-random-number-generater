@@ -43,6 +43,8 @@ def generate(modulus, increment):
          
     result = int(str(''.join([str(i) for i in output]))[-1])
     return result
+
+#start from here    
 start=t.ctime().split(" ")[3]
 maxlist=[]
 minlist=[]
@@ -51,7 +53,6 @@ i=0
 loop=True
 times=100
 while loop:
-    t.sleep(0.00000000000001)
     num=generate(m,i)
     #print num
     if num >= 5:
