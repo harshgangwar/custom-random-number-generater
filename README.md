@@ -5,10 +5,10 @@ These two numbers are passed in generate() method, it's the main method where th
 generate() method calls the validate_inputs(), where the value of multiplier and seeds are got, these are the random values.
 in get_seeds() method:
  value_1, value_2 = int(str(time() - int(time()))[-1]), int(str(time() - int(time()))[-2])
-is used to generate the any random value
+is used to generate any random value
 Here: e.g. time() = 1507049023.53
 int(time()) = 1507049023(only int value)
-basically str(time() - int(time())) has only the decimal value 
+basically str(time() - int(time())) has only the decimal value e.g. 13455.878 - 13455 = .878
 & int(str(time() - int(time()))[-1]), int(str(time() - int(time()))[-2]) give the last and second last value of the decimal, use as the random values 
 in validate_inputs() :
   above these two random values are used as multiplier, seed
@@ -17,7 +17,7 @@ in validate_inputs() :
 in generate() method :
 we gets these two values, which are further used to generate random numbers,
 current_iteration = (current_iteration * multiplier) + increment
-and to get values only in the range of modulus (10 in our case), we use:
+and to get values only in the range of modulus 10(in our case), we use:
  if current_iteration > modulus:
                 current_iteration %= modulus
 all the random values are append in output.append(current_iteration)
@@ -29,7 +29,7 @@ and we return the last value of the string result = int(str(''.join([str(i) for 
 this is first random value within range of 1 to 10 
 
 now, to add into list1
-we check its value, if it's length <= 5 and list1 length <= 27, because we are storing only 27 values which are <= 5
+we check its value, if it's length <= 5 and list1 length <= 27 (because we are storing only 27 values which are <= 5), we add it into list1
 same, to add into list2
 if values are >= 5 and length of the list2 is <= 73, we add this value into list2
 
